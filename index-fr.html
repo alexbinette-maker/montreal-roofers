@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Couvreurs Montréal - Services de couverture professionnels à Pointe-Claire et sur l'Île-des-Sœurs. Réparations d'urgence, remplacement de toiture et inspections. Appelez (514) 497-8337">
+    <title>Couvreurs Montréal | Toiture Professionnelle à Pointe-Claire & Île-des-Sœurs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --secondary: #c9302c;
+            --accent: #f39c12;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+        
+        .language-switcher a {
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: background 0.3s;
+        }
+        
+        .language-switcher a:hover {
+            background: var(--secondary);
+        }
+        
+        .language-switcher a.active {
+            background: var(--secondary);
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .top-bar .phone {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #a52521;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 92, 0.9), rgba(26, 58, 92, 0.85)), 
+                        url('https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1600') center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .badge strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 80px 0;
+        }
+        
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .why-item {
+            text-align: center;
+        }
+        
+        .why-item .number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .why-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonials .section-title h2 {
+            color: white;
+        }
+        
+        .testimonials .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stars {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-card cite {
+            font-style: normal;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section .cta-button {
+            background: white;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+        
+        .cta-section .cta-button:hover {
+            background: var(--light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-item .icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about .logo {
+            color: white;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+        
+        footer h4 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        footer ul {
+            list-style: none;
+        }
+        
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer ul a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer ul a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .language-switcher a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="index.html">English</a>
+        <a href="index-fr.html" class="active">Français</a>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>
+                <span>📍 164 Av. Seigniory, Pointe-Claire, QC</span>
+                <span style="margin-left: 20px;">⏰ Ouvert 24h/24 - Services d'urgence disponibles</span>
+            </div>
+            <a href="tel:5144978337" class="phone">📞 (514) 497-8337</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Montreal<span>Roofers</span></a>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#testimonials">Avis</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:5144978337" class="cta-button">Obtenir un devis gratuit</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Services de Couverture Professionnels<br>à Pointe-Claire & Île-des-Sœurs</h1>
+            <p>Fait confiance par les propriétaires pour des réparations de toiture de qualité, des remplacements et des services d'urgence. Licencié, assuré et engagé envers l'excellence.</p>
+            <a href="tel:5144978337" class="cta-button" style="font-size: 1.1rem; padding: 15px 40px;">
+                Appelez maintenant : (514) 497-8337
+            </a>
+            <div class="hero-badges">
+                <div class="badge">
+                    <strong>5.0 ★</strong>
+                    Note Google
+                </div>
+                <div class="badge">
+                    <strong>24/7</strong>
+                    Service d'urgence
+                </div>
+                <div class="badge">
+                    <strong>100%</strong>
+                    Satisfaction garantie
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services de Couverture</h2>
+                <p>Solutions de couverture complètes pour les propriétés résidentielles et commerciales dans tout le Grand Montréal</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Réparations de Toiture</h3>
+                    <p>Réparations rapides et fiables pour les fuites, les bardeaux endommagés, les problèmes d'étanchéité et les dégâts de tempête. Service le même jour disponible.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Remplacement de Toiture</h3>
+                    <p>Remplacement complet de toiture avec matériaux de qualité supérieure. Nous gérons les bardeaux d'asphalte, les toitures métalliques et les systèmes de toiture plate.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3>Services d'Urgence</h3>
+                    <p>Réponse d'urgence 24h/24 pour les problèmes de toiture urgents. Nous sommes là quand vous en avez besoin — jour et nuit.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Inspections de Toiture</h3>
+                    <p>Inspections complètes pour identifier les problèmes potentiels avant qu'ils ne deviennent coûteux. Rapports détaillés fournis.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Couverture Commerciale</h3>
+                    <p>Solutions de couverture professionnelles pour les entreprises, les condos et les immeubles à plusieurs unités. Perturbation minimale garantie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Enlèvement de Neige</h3>
+                    <p>Enlèvement sécuritaire et efficace de la neige du toit pour prévenir les barrages de glace et les dégâts structuraux pendant les hivers montréalais rigoureux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi nous choisir?</h2>
+                <p>Nous nous engageons à fournir une qualité exceptionnelle et un service professionnel sur chaque projet</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-item">
+                    <div class="number">1</div>
+                    <h3>Licencié et Assuré</h3>
+                    <p>Entrepreneur RBQ entièrement licencié avec assurance complète pour votre tranquillité d'esprit.</p>
+                </div>
+                <div class="why-item">
+                    <div class="number">2</div>
+                    <h3>Tarification Transparente</h3>
+                    <p>Devis clairs et directs sans frais cachés. Nous expliquons tout avant de commencer les travaux.</p>
+                </div>
+                <div class="why-item">
+                    <div class="number">3</div>
+                    <h3>Matériaux de Qualité</h3>
+                    <p>Nous utilisons uniquement des matériaux de couverture premium provenant de fabricants de confiance avec garantie.</p>
+                </div>
+                <div class="why-item">
+                    <div class="number">4</div>
+                    <h3>Travail Garanti</h3>
+                    <p>Tous nos travaux sont garantis. Nous soutenons chaque réparation et installation que nous effectuons.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ce que disent nos clients</h2>
+                <p>Ne nous croyez pas sur parole — écoutez les propriétaires satisfaits</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>
+                    « Service exceptionnel du début à la fin. L'équipe était professionnelle, efficace et la qualité des travaux a dépassé mes attentes. Ils ont bien expliqué tout et ont terminé à temps. Je recommande vivement Couvreurs Montréal! »
+                </blockquote>
+                <cite>— Serge Jeffrey, Avis Google</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Avez-vous besoin d'une inspection ou réparation de toiture?</h2>
+            <p>Obtenez un devis gratuit sans obligation aujourd'hui. Nous répondons dans les 24 heures.</p>
+            <a href="tel:5144978337" class="cta-button">Appelez (514) 497-8337</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nous Contacter</h2>
+                <p>Prêt à commencer? Contactez-nous pour obtenir une estimation gratuite</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Prenez Contact</h3>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Adresse</strong>
+                            164 Av. Seigniory<br>
+                            Pointe-Claire, QC H9R 1K1
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <a href="tel:5144978337" style="color: var(--secondary); text-decoration: none;">(514) 497-8337</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">⏰</span>
+                        <div>
+                            <strong>Horaires</strong>
+                            Ouvert 24h/24 pour les urgences<br>
+                            Rendez-vous réguliers : lun-sam
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🌍</span>
+                        <div>
+                            <strong>Zone de Service</strong>
+                            Pointe-Claire, Dorval, Kirkland, Dollard-des-Ormeaux, Beaconsfield, Baie-d'Urfé, Pierrefonds et tout le Grand Montréal
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numéro de téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Courriel</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service demandé</label>
+                            <select id="service" name="service">
+                                <option value="">Sélectionnez un service...</option>
+                                <option value="repair">Réparation de Toiture</option>
+                                <option value="replacement">Remplacement de Toiture</option>
+                                <option value="inspection">Inspection de Toiture</option>
+                                <option value="emergency">Service d'Urgence</option>
+                                <option value="commercial">Couverture Commerciale</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Décrivez votre projet</label>
+                            <textarea id="message" name="message" placeholder="Décrivez le problème ou ce que vous avez besoin..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Obtenir un devis gratuit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">Montreal<span>Roofers</span></a>
+                    <p>Entrepreneur en couverture professionnel servant Pointe-Claire et l'Île-des-Sœurs. Qualité de travail, tarification transparente et satisfaction garantie sur chaque projet.</p>
+                </div>
+                <div>
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="#testimonials">Avis</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Réparations de Toiture</a></li>
+                        <li><a href="#">Remplacement de Toiture</a></li>
+                        <li><a href="#">Services d'Urgence</a></li>
+                        <li><a href="#">Inspections</a></li>
+                        <li><a href="#">Couverture Commerciale</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Couvreurs Montréal. Tous droits réservés. | Entrepreneur RBQ Licencié | Desservant le Grand Montréal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
