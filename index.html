@@ -40,6 +40,33 @@
             padding: 0 20px;
         }
         
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+        
+        .language-switcher a {
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: background 0.3s;
+        }
+        
+        .language-switcher a:hover {
+            background: var(--secondary);
+        }
+        
+        .language-switcher a.active {
+            background: var(--secondary);
+        }
+        
         /* Top Bar */
         .top-bar {
             background: var(--primary);
@@ -526,10 +553,26 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .language-switcher a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="index.html" class="active">English</a>
+        <a href="index-fr.html">Français</a>
+    </div>
 
     <!-- Top Bar -->
     <div class="top-bar">
